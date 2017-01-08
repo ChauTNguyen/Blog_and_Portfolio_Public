@@ -22,4 +22,3 @@ app/templates/blog/4.html
 app/templates/blog/5.html
 app/static/css/thumbnail-gallery.css
 app/static/fonts
-app/config.py
