@@ -1,0 +1,248 @@
+/* Layout Styles */
+#container {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#nav {
+    float: right;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+/* Base Element Styles */
+a {
+    font-family: Arial, Sans-Serif, Arial, Helvetica, Times New Roman;
+    color: #2F4F4F;
+}
+
+a:visited {
+    color: #2F4F4F;
+}
+
+a:hover {
+    color: red;
+}
+
+img {
+    padding: 35px 25px 0 0;
+}
+
+h1 {
+    font-family: Arial, Sans-Serif;
+    font-size: 28px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-family: Arial, Sans-Serif;
+    font-size: 24px;
+    margin: 0;
+    padding-top: 30px;
+}
+
+i {
+    color: #2F4F4F;
+}
+
+i:hover {
+    color: red;
+}
+
+/* Subscribe Form */
+/* Copied from http://code.tutsplus.com/tutorials/intro-to-flask-adding-a-contact-page--net-28982 and modified*/
+/* Message flashing! */
+#subscribe_form, #comment_form {
+    padding-top: 10px;
+}
+
+.flash {
+    background-color: #FBB0B0;
+    padding: 10px;
+    width: 392px;
+}
+
+form label {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    /*padding: 10px 0;*/
+}
+
+form input#name,
+form input#nickname,
+form input#email,
+form input#subject {
+    width: 100%;
+    border-width: 0 0 2px 0;
+    border-bottom-color: #3B666B;
+    background-color: white;
+    outline: none;
+    font-family: Roboto, Helvetica, Sans-Serif, Arial, Helvetica, Times New Roman;
+    font-size: 24px;
+}
+
+form textarea#message {
+    width: 100%;
+    height: 100px;
+    border-width: 0 0 2px 0;
+    border-bottom-color: #3B666B;
+    background-color: white;
+    outline: none;
+    font-family: Roboto, Helvetica, Sans-Serif, Arial, Helvetica, Times New Roman;
+    font-size: 16px;
+}
+
+.paragraph, #toc {
+    font-family: Arial, Sans-Serif, Arial, Helvetica, Times New Roman;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #2f4f4f;
+    letter-spacing: .5px;
+    line-height: 30px;
+}
+
+#entries li {
+    font-size: 18px;
+}
+
+#entries a, ol {
+    color: #2f4f4f;
+    text-decoration: none;
+    font-family: Arial, Sans-Serif, Arial, Helvetica, Times New Roman;
+}
+
+#entries ol {
+    color: #2f4f4f;
+    font-size: 20px;
+    font-family: Sans-Serif, Arial, Helvetica, Times New Roman;
+}
+
+#entries a:visited {
+    color: #2F4F4F;
+}
+
+#entries a:hover {
+    color: red;
+}
+
+.comment {
+    font-family: Arial, Sans-Serif, Arial, Helvetica, Times New Roman;
+    background-color: #efefef;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.comment-name {
+    font-size: 20px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.comment-message {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#tags-section {
+    padding-top: 10px;
+}
+
+.tag {
+    padding: 5px;
+    background-color: #2F4F4F;
+    color: white;
+}
+
+.tag a {
+    background-color: #2F4F4F;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.num_of_comments {
+    font-size: 16px;
+    color: #9b9b9b;
+}
+
+#subscribe_form button {
+    background-color: white;
+    border: none;
+}
+
+#subscribe_form button .fa-arrow-right {
+    font-size: 20px;
+}
+
+#comment_form button {
+    background-color: white;
+    border: none;
+}
+
+#comment_form button .fa-send {
+    font-size: 20px;
+}
+
+button .fa-arrow-right:focus {
+    outline: 0;
+}
+
+#subscribe_form h3 {
+    font-family: Roboto, Helvetica, Sans-Serif, Arial, Helvetica, Times New Roman;
+    font-size: 13px;
+}
+
+#comment_form h3 {
+    font-family: Roboto, Helvetica, Sans-Serif, Arial, Helvetica, Times New Roman;
+    font-size: 13px;
+}
+
+#subscribe_form form input#email:focus {
+    border-bottom-color: #9C1A1C;
+}
+
+#comment_form form input#nickname:focus {
+    border-bottom-color: #9C1A1C;
+}
+
+#comment_form form textarea#message:focus {
+    border-bottom-color: #9C1A1C;
+}
+
+#comment_form h3 {
+    padding-bottom: 10px;
+}
+
+#subscribe_form form h6 {
+    font-family: Helvetica, Sans-Serif, Arial, Helvetica, Times New Roman;
+}
+
+/* Media Queries */
+@media (max-width: 768px) and (orientation: portrait) {
+    .tag, .tag a {
+        display: block;
+    }
+
+    .tag a:hover {
+        color: #69ffe7;
+    }
+}
+
+@media (min-width: 769px) {
+    #container {
+        width: 70%;
+    }
+
+    form input#email,
+    form input#nickname,
+    form input#subject,
+    form textarea#message {
+        width: 400px;
+    }
+}

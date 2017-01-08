@@ -1,0 +1,48 @@
+{% extends "blog/blog-main-template.html" %}
+
+{% block content %}
+
+<div id="entries">
+  <ol>
+    {% for i in range(0, blog_post_titles|length) %}
+    <li>
+      <a href="{{ url_for('show_post', post_id=i+1) }}">{{ blog_post_titles[i] }}</a> <span class="num_of_comments">{{ num_of_comments_per_post[i] }} comments</span>
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+
+<p>These blog posts are still in the process of editing. I just wanted to see how the website looks online.</p>
+
+<div id="recent-comments">
+  <h3>Recent Comments</h3>
+  <div class="comments-section">
+    {% for comment in recent_comments %}
+    <div class="comment">
+      <hr/>
+      <span class="comment-icon"><i class="fa fa-comment"></i> by</span>
+      <span class="comment-name">{{ comment.name }}</span>
+      <span class="date">on {{ comment.month }}/{{ comment.day }}/{{ comment.year }} @ </span>
+                          <span class="time">
+                              {{ comment.hour }}:
+                              {%- if comment.minutes < 10 %}0{{ comment.minutes }}
+                              {% else %}{{ comment.minutes }}{% endif %}
+                              {{ comment.mark }}
+                          </span>
+      <span class="blog_post_title">in <a href="{{ url_for('show_post', post_id=comment.blog_post_id) }}">{{ blog_post_titles[comment.blog_post_id-1] }}</a></span>
+      <div class="comment-message">{{ comment.message }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="tags-section">
+  <h3>Tags</h3>
+  <!-- for loop for tags -->
+  {% for tag in all_tags %}
+  <span class="tag"><a href="{{ url_for('tags', tag_name=tag) }}">{{ tag }}</a></span>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

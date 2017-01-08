@@ -1,0 +1,70 @@
+#container {
+    width: 50%;
+    height: 50%;
+    padding-top: 100px;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#nav {
+    padding-bottom: 30px;
+}
+
+.nav-item { /* Creates the squares */
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #2F4F4F;
+    opacity: .7;
+    line-height: 100px; /* Aligns the text properly. No need for vertical and/or text-aligns.*/
+    font-family: Arial, sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-item a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 1.3pt;
+}
+
+.nav-item:hover {
+    background: rgb(255, 0, 0);
+    opacity: 1;
+}
+
+i {
+    color: #2F4F4F;
+}
+
+i:hover {
+    color: red;
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    #container {
+        width: 100%;
+        padding-top: 30px;
+    }
+}
+
+@media (max-height: 768px) and (orientation: landscape) {
+    #container {
+        padding-top: 3px;
+    }
+
+    #nav {
+        padding-bottom: 0px;
+    }
+
+    p {
+        margin: 10px;
+    }
+}

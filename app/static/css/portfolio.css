@@ -1,0 +1,242 @@
+/* Base Styles */
+
+body {
+    padding-top: 160px;
+    line-height: 1.6
+}
+
+p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+
+/* Layout Containers */
+
+#container {
+    background-color: #FFFFFF;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    z-index: 30;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* Base Layout Styles */
+
+.thumb-container {
+    border: 1px solid;
+}
+
+.thumbnail img {
+    height: 230px;
+    margin: 0 auto;
+}
+
+.banner img {
+    max-width: 100%;
+}
+
+
+@media (max-width: 720px) {
+    .main-nav {
+        width: 100%;
+    }
+}
+
+.main-nav ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.main-nav li {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: -20px;
+}
+
+#name {
+    font-size: 32px;
+    text-align: center;
+}
+
+#name-link:link {
+    color: black;
+}
+
+#name-link:visited {
+    color: black;
+}
+
+#name-link:hover {
+    color: #1b6d85;
+    text-decoration: none;
+}
+
+i,
+.project-title {
+    color: rgba(19, 43, 102, .85);
+}
+
+.project-title {
+    text-align: center;
+}
+
+i:hover {
+    color: #0288D1;
+}
+
+.text-over-thumbnail {
+    text-align: center;
+    width: 100%;
+}
+
+.header {
+    /* project descriptions style */
+    text-align: center;
+}
+
+.thumb a {
+    border: none;
+    text-decoration: none;
+}
+
+.thumb-container {
+    position: relative;
+}
+
+figure {
+    margin: 0;
+    line-height: 0;
+}
+
+.caption {
+    /* by default it'll be on the top */
+    line-height: 1.5;
+    color: #fff !important;
+    padding: 1em;
+    background: rgba(19, 43, 102, .85);
+    position: absolute;
+    width: 100%;
+}
+
+.caption h3 {
+    margin-top: 0;
+}
+
+.caption p {
+    /* resets paragraph font to 16px */
+    font-size: 1em;
+}
+
+.caption-bottom {
+    left: 0;
+    bottom: 0;
+}
+
+.project-caption {
+    font-size: .9em;
+    line-height: 1.5;
+    color: #fff;
+    padding: 1em;
+    background: rgba(19, 43, 102, .85);
+}
+
+.headline {
+    text-align: center;
+}
+
+.banner img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Media Queries */
+
+@media only screen and (min-width: 300px) {
+    .fa-responsive:before {
+        /* need before for font-awesome */
+        font-size: .7em;
+    }
+    .thumbnail img {
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width: 370px) {
+    body {
+        padding-top: 170px;
+    }
+    .fa-responsive:before {
+        font-size: 1em;
+    }
+    .thumbnail img {
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 768px) and (orientation: landscape) {
+    body {
+        padding-top: 0;
+    }
+    .main-header {
+        position: static;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    body {
+        padding-top: 160px;
+    }
+    #container {
+        width: 80%;
+        max-width: 1000px;
+    }
+    #name {
+        color: red;
+        text-align: left;
+        font-size: 48px;
+    }
+    #name {
+        display: inline-block;
+    }
+    .main-header {
+        position: fixed;
+    }
+    .main-nav {
+        float: right;
+        padding-top: 40px;
+        /* Aligns nav with header. */
+    }
+    .caption-fade-in {
+        text-align: center;
+        background: #455A64 !important;
+        height: 100%;
+        opacity: 0;
+    }
+    .caption-fade-in:hover {
+        opacity: .8;
+        transition: opacity 1s;
+    }
+    .caption h3 {
+        padding-top: 20px;
+    }
+    .headline {
+        text-align: left;
+    }
+    .banner img {
+        display: inline;
+        /* margin 0 auto doesn't matter because it's inline */
+    }
+}

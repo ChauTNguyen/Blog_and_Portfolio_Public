@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Chau Nguyen">
+
+  <title>{ cnguyen }</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- start css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- end css -->
+
+</head>
+<body>
+
+
+<div id="container">
+
+
+  <div id="nav">
+    <div class="nav-item">
+      <a href="{{ url_for('portfolio') }}">tech</a>
+    </div>
+    <div class="nav-item">
+      <a href="{{ url_for('blog') }}">blog</a>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <p>chau nguyen</p>
+    <p>aspiring software developer</p>
+    <p>programming hobbyist and enthusiast</p>
+    <p>OCC 2017 - computer science</p>
+    <p>
+      <a href="{{ url_for('contact') }}"><i class="fa fa-envelope-square"></i></a>
+      <a href="https://github.com/ChauTNguyen" target="_blank"><i class="fa fa-github-square"></i></a>
+    </p>
+  </div>
+
+
+</div>
+
+
+</body>
+</html>

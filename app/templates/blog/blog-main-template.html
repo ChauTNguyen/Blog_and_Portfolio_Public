@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Chau Nguyen">
+
+  <title>{ blog }</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- start css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/blog-template.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- end css -->
+
+</head>
+<body>
+
+
+<div id="container">
+
+
+  <div id="nav">
+    <div class="nav-item">
+      <a href="{{ url_for('contact')}}"><i class="fa fa-envelope-square"></i></a>
+    </div>
+    <div class="nav-item">
+      <a href="{{ url_for('index') }}"><i class="fa fa-home"></i></a>
+    </div>
+  </div>
+
+  <div id="toc">Table of Contents:</div>
+
+  {% block content %}{% endblock %}
+
+
+</div>
+
+
+</body>
+</html>

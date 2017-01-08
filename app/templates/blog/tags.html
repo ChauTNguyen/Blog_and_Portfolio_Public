@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Chau Nguyen">
+
+  <title>{ blog }</title>
+</head>
+<body>
+Links with tag identifier '{{ tag_name }}':
+{% for post_id, title in posts_ids_and_titles.items() %}
+<div class="link"><a href="{{ url_for('show_post', post_id=post_id) }}">{{ title }}</a></div>
+{% endfor %}
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Chau Nguyen">
+
+  <title>{ blog }</title>
+
+  <!-- start css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/blog-template.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- end css -->
+
+</head>
+<body>
+
+
+<div id="container">
+  <div id="nav">
+    <div class="nav-item">
+      <a href="{{ url_for('contact')}}"><i class="fa fa-envelope-square"></i></a>
+    </div>
+    <div class="nav-item">
+      <a href="{{ url_for('index') }}"><i class="fa fa-home"></i></a>
+    </div>
+  </div>
+
+  <div><a href="{{ url_for('blog') }}">Back to Table of Contents</a></div>
+
+  <h1>{{ title }}</h1>
+
+  Last Updated: {{ last_updated }}
+
+  {% block content %}{% endblock %}
+  <div id="tags-section">
+    <!-- for loop for tags -->
+    {% for tag in tags %}
+    <span class="tag"><a href="{{ url_for('tags', tag_name=tag) }}">{{ tag }}</a></span>
+    {% endfor %}
+  </div>
+
+  <div id="subscribe_form">
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <h3>SUBSCRIBE TO BE NOTIFIED OF NEW POSTS!</h3>
+
+    <form action="{{ url_for('show_post', post_id=post_id) }}" method="post">
+      <input type="hidden" name="form-name" value="form1">
+      {{ subscribe_form.hidden_tag() }}
+
+      {{ subscribe_form.email.label }}
+      {{ subscribe_form.email }}
+
+      <!-- {{ subscribe_form.submit }} -->
+      <button type="submit"><i class="fa fa-arrow-right"></i></button>
+    </form>
+  </div>
+
+
+  <div id="comment_form">
+    <h3>POST A COMMENT!</h3>
+
+    <form action="{{ url_for('show_post', post_id=post_id) }}" method="post">
+      <input type="hidden" name="form-name" value="form2">
+      {{ comment_form.hidden_tag() }}
+
+      {{ comment_form.nickname }}
+      <div>{{ comment_form.message }}</div>
+
+      <!-- {{ comment_form.submit }} -->
+      <button type="submit"><i class="fa fa-send"></i></button>
+    </form>
+  </div>
+
+  <div id="comments-section">
+    {% for comment in comments %}
+    <div class="comment">
+      <hr/>
+      <span class="comment-icon"><i class="fa fa-comment"></i> by</span>
+      <span class="comment-name">{{ comment.name }}</span>
+      <span class="date">on {{ comment.month }}/{{ comment.day }}/{{ comment.year }} @ </span>
+                          <span class="time">
+                              {{ comment.hour }}:
+                              {%- if comment.minutes < 10 %}0{{ comment.minutes }}
+                              {% else %}{{ comment.minutes }}{% endif %}
+                              {{ comment.mark }}
+                          </span>
+      <div class="comment-message">{{ comment.message }}</div>
+    </div>
+    {% else %}
+    <h2>No comments yet.</h2>
+    {% endfor %}
+  </div>
+
+</div>
+</body>
+</html>
